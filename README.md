@@ -16,6 +16,7 @@
 ### Setup Instructions
 - 1. Clone or Create the Script
 Save the following script as backup-script.sh in your desired directory:
+```bash
 #!/bin/bash
 time=$(date +%m-%d-%y_%H_%M_%S)
 Backup_file=/home/ubuntu/bash
@@ -50,25 +51,30 @@ if [ $? -eq 0 ]; then
 else
   echo "File upload to S3 failed."
 fi
-
+```
 ### 2. Install AWS CLI
 Run the following commands to install AWS CLI:
+```bash
 sudo apt install unzip
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+```
 ### 3. Configure AWS CLI
 Set up your AWS credentials:
 aws configure # Provide your AWS Access Key ID, Secret Access Key, and default region.
 ### 4. Create an S3 Bucket
 Run the following command to create an S3 bucket:
-$ aws s3api create-bucket --bucket <bucket-name> --region <region>
+```bash
+aws s3api create-bucket --bucket <bucket-name> --region <region>
+```
 Replace <bucket-name> and <region> with your desired bucket name and region.
 
 ### 5. Schedule Backups
 Use cron to automate the backup process. For example, to run the script every 2 minutes:
   ```bash
 sudo vim /etc/crontab
+```
 Add the following line:
   ```bash 
 */2 * * * * root /home/ubuntu/backup-script.sh3
