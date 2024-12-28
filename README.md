@@ -62,7 +62,7 @@ Set up your AWS credentials:
 aws configure # Provide your AWS Access Key ID, Secret Access Key, and default region.
 ### 4. Create an S3 Bucket
 Run the following command to create an S3 bucket:
-aws s3api create-bucket --bucket <bucket-name> --region <region>
+$ aws s3api create-bucket --bucket <bucket-name> --region <region>
 Replace <bucket-name> and <region> with your desired bucket name and region.
 
 ### 5. Schedule Backups
@@ -80,5 +80,5 @@ aws s3 rb s3://<bucket-name> --force
 ## Logs
 The script logs all operations to /home/ubuntu/backup/logfile.log for easy debugging and monitoring.
 
-* This script is provided as-is. Ensure proper testing in your environment before using it in production.
+# This script is provided as-is. Ensure proper testing in your environment before using it in production.
 
