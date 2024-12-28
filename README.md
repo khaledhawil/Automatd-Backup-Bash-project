@@ -18,14 +18,15 @@
 Save the following script as backup-script.sh in your desired directory:
 ```bash
 #!/bin/bash
+# Created by Khaled Hawil 
 time=$(date +%m-%d-%y_%H_%M_%S)
 Backup_file=/home/ubuntu/bash
 Dest=/home/ubuntu/backup
 filename=file-backup-$time.tar.gz
 LOG_FILE="/home/ubuntu/backup/logfile.log"
-
 S3_BUCKET="s3-new-bash-course"
 FILE_TO_UPLOAD="$Dest/$filename"
+eng="Khaled Hawil"
 
 if ! command -v aws &> /dev/null; then
   echo "AWS CLI is not installed. Please install it first."
@@ -51,6 +52,8 @@ if [ $? -eq 0 ]; then
 else
   echo "File upload to S3 failed."
 fi
+echo "Thanks to using this script"
+echo "This Script provided by eng-$eng"
 ```
 ### 2. Install AWS CLI
 Run the following commands to install AWS CLI:
