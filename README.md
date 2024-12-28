@@ -67,13 +67,15 @@ Replace <bucket-name> and <region> with your desired bucket name and region.
 
 ### 5. Schedule Backups
 Use cron to automate the backup process. For example, to run the script every 2 minutes:
-
+  ```bash
 sudo vim /etc/crontab
 Add the following line:
+  ```bash 
 */2 * * * * root /home/ubuntu/backup-script.sh
 
 ### 6. Clean Up
 To delete the S3 bucket and its contents:
+```bash
 aws s3 rb s3://<bucket-name> --force
 
 
