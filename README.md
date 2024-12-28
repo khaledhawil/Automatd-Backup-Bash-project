@@ -108,7 +108,7 @@ sudo vim /etc/crontab
 ```
 Add the following line:
   ```bash 
-*/2 * * * * root /home/ubuntu/backup-script.sh3
+*/2 * * * * root /home/ubuntu/backup-script.sh
 ``` 
 ### 6. Clean Up
 To delete the S3 bucket and its contents:
