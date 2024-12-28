@@ -24,7 +24,7 @@ Backup_file=/home/ubuntu/bash
 Dest=/home/ubuntu/backup
 filename=file-backup-$time.tar.gz
 LOG_FILE="/home/ubuntu/backup/logfile.log"
-S3_BUCKET="s3-new-bash-course"
+S3_BUCKET="Your-S3-Bucket"
 FILE_TO_UPLOAD="$Dest/$filename"
 eng="Khaled Hawil"
 
@@ -65,7 +65,10 @@ sudo ./aws/install
 ```
 ### 3. Configure AWS CLI
 Set up your AWS credentials:
-aws configure # Provide your AWS Access Key ID, Secret Access Key, and default region.
+```bash
+aws configure 
+```
+ Provide your AWS Access Key ID, Secret Access Key, and default region.
 ### 4. Create an S3 Bucket
 Run the following command to create an S3 bucket:
 ```bash
