@@ -1,4 +1,11 @@
 #!/bin/bash
+# Created by Khaled Hawil
+
+# -----------------------
+# Variables Initialization
+# -----------------------
+# Define variables for time, backup file, destination, log file, and S3 bucket.
+
 time=$(date +%m-%d-%y_%H_%M_%S)
 backup_file=/home/ubuntu/bash
 dest=/home/ubuntu/backup
@@ -13,12 +20,22 @@ file_TO_upload="$dest/$filename"
 #       echo " Please enter the directory that U want to backup at ---> $(date)" | tee  -a "$LOG_FILE"
 #       exit 2
 #fi
+
+
+# ------------------------------------------
+# Check for AWS CLI installation
+# ------------------------------------------
+# Ensure that AWS CLI is installed. If not, print a message and exit with status 2.
 if ! command -v aws &> /dev/null
 then
         echo "AWS CLI ir not installed. Please install it first"
         exit 2
 fi
 
+# ------------------------------------------
+# Backup the specified directory
+# ------------------------------------------
+# Check if the backup file already exists. If it doesn’t, create a compressed one.
 
 if [ $? -ne 2 ]; then
  if [ -f $filename ]; then
@@ -30,6 +47,11 @@ if [ $? -ne 2 ]; then
         aws s3 cp "$file_TO_upload" "s3://$s3_Bucket/"
  fi
 fi 
+
+# ------------------------------------------
+# Verify the upload to S3
+# ------------------------------------------
+# Check the exit status of the `aws s3 cp` command. If successful, print a success message.
 
 if [ $? -eq 0 ] ; then
         echo
