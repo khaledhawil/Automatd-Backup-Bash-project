@@ -71,13 +71,13 @@ Use cron to automate the backup process. For example, to run the script every 2 
 sudo vim /etc/crontab
 Add the following line:
   ```bash 
-*/2 * * * * root /home/ubuntu/backup-script.sh
-
+*/2 * * * * root /home/ubuntu/backup-script.sh3
+``` 
 ### 6. Clean Up
 To delete the S3 bucket and its contents:
 ```bash
 aws s3 rb s3://<bucket-name> --force
-
+```
 
 ## Logs
 The script logs all operations to /home/ubuntu/backup/logfile.log for easy debugging and monitoring.
