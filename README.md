@@ -55,9 +55,9 @@ fi
 ### 2. Install AWS CLI
 Run the following commands to install AWS CLI:
 ```bash
-sudo apt install unzip
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
+sudo apt install unzip \
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+unzip awscliv2.zip \
 sudo ./aws/install
 ```
 ### 3. Configure AWS CLI
@@ -86,7 +86,11 @@ aws s3 rb s3://<bucket-name> --force
 ```
 
 ## Logs
-The script logs all operations to /home/ubuntu/backup/logfile.log for easy debugging and monitoring.
-
-# This script is provided as-is. Ensure proper testing in your environment before using it in production.
+The script logs all operations to 
+```bash
+cat /home/ubuntu/backup/logfile.log 
+```
+for easy debugging and monitoring.
+# Before use this script
+* This script is provided as-is. Ensure proper testing in your environment before using it in production.
 
