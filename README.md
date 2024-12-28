@@ -1,4 +1,4 @@
-# Automated Backup Script with AWS S3 Integration 
+# Automated Backup Script with AWS S3 
 
 ## Features 
 -    Compresses and backs up specified directories.
